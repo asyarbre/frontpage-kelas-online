@@ -1,5 +1,6 @@
 import axios from "../configs/axios";
 import Header from "../parts/Header";
+import Hero from "../parts/Hero";
 
 function Home({data}) {
   return (
@@ -8,6 +9,7 @@ function Home({data}) {
         <section className="header-clipping pt-10">
           <div className="container mx-auto">
             <Header />
+            <Hero />
           </div>
         </section>
       </main>
