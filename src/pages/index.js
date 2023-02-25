@@ -1,6 +1,7 @@
 import axios from "../configs/axios";
 import Header from "../parts/Header";
 import Hero from "../parts/Hero";
+import Clients from "../parts/Clients";
 
 function Home({data}) {
   return (
@@ -11,6 +12,9 @@ function Home({data}) {
             <Header />
             <Hero />
           </div>
+        </section>
+        <section className="container mx-auto pt-24">
+          <Clients />
         </section>
       </main>
     </>
