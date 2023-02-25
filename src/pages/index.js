@@ -1,8 +1,17 @@
 import axios from "../configs/axios";
+import Header from "../parts/Header";
 
-function Home(props) {
+function Home({data}) {
   return (
-    <h1 className="text-3xl font-bold underline text-blue-400">Hello world!</h1>
+    <>
+      <main>
+        <section className="header-clipping pt-10">
+          <div className="container mx-auto">
+            <Header />
+          </div>
+        </section>
+      </main>
+    </>
   );
 }
 
