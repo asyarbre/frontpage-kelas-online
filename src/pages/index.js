@@ -3,6 +3,7 @@ import Header from "../parts/Header";
 import Hero from "../parts/Hero";
 import Clients from "../parts/Clients";
 import ListCourses from "../parts/ListCourses";
+import ListCategories from "@/parts/ListCategories";
 
 function Home({data}) {
   return (
@@ -19,6 +20,9 @@ function Home({data}) {
         </section>
         <section className="container mx-auto pt-24">
           <ListCourses data={data} />
+        </section>
+        <section className="container mx-auto pt-24">
+          <ListCategories />
         </section>
       </main>
     </>
