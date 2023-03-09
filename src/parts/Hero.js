@@ -1,9 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import Pict from "../../public/images/pict-1.png";
 
 export default function Hero() {
-  function submit() {}
+  const [state, setstate] = useState(() => (""))
+
+  function submit() {
+    window.open(`${process.env.NEXT_PUBLIC_BASE_URL}/register?email=${state}`)
+  }
   return (
     <div className="flex justify-between items-center">
       <div className="w-1/2">
@@ -19,6 +23,7 @@ export default function Hero() {
         <form onSubmit={submit}>
           <input
             type="text"
+            onChange={(event) => setstate(event.target.value)}
             className="bg-white focus:outline-none border-0 px-4 md:px-6 py-3 w-full md:w-1/2"
             placeholder="Your Email Address"
           />
