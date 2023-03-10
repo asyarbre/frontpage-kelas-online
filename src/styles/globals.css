@@ -20,4 +20,14 @@
     height: 648px;
     clip-path: polygon(0 0, 100% 0, 100% 86%, 0% 100%);
   }
+
+  .video-wrapper {
+    @apply absolute inset-0 z-0;
+    padding-bottom: 56.25%;
+    height: 0;
+  }
+
+  .video-wrapper iframe {
+    @apply absolute top-0 left-0 w-full h-full;
+  }
 }
