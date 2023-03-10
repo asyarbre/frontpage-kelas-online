@@ -1,4 +1,5 @@
 import axios from "../configs/axios";
+import courses from "../constants/api/courses";
 import Header from "../parts/Header";
 import Hero from "../parts/Hero";
 import Clients from "../parts/Clients";
@@ -36,8 +37,8 @@ function Home({data}) {
 // getinitialprops to get data from server url is /courses
 Home.getInitialProps = async () => {
   try {
-    const data = await axios.get(`/courses`);
-    return {data: data.data.data};
+    const data = await courses.all();
+    return {data: data.data};
   }
   catch (error) {
     return error;
