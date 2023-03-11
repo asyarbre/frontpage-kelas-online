@@ -1,9 +1,16 @@
 import Head from "next/head";
 import Link from "next/link";
+import Image from "next/image";
 import Youtube from "react-youtube";
 
 import courses from "src/constants/api/courses";
 import Header from "../../parts/Header";
+
+import IconStudent from "../../../public/images/icon-student.svg";
+import IconVideo from "../../../public/images/icon-video.svg";
+import IconCertificate from "../../../public/images/icon-certificate.svg";
+
+import Feature from "../../parts/Details/Feature";
 
 function DetailsCourse({ data }) {
   console.log(data);
@@ -47,6 +54,37 @@ function DetailsCourse({ data }) {
         </div>
         <div className="container mx-auto z-10 relative">
           <Header />
+        </div>
+      </section>
+
+      <section className="container mx-auto pt-24 relative">
+        <div className="absolute top-0 w-full transform -translate-y-1/2">
+          <div className="w-3/4 mx-auto">
+            <div className="flex justify-between">
+              <Feature
+                data={{
+                  icon: <Image src={IconStudent} alt="icon" />,
+                  meta: "Student",
+                  value: data?.total_student ?? 0,
+                }}
+              />
+              <Feature
+                data={{
+                  icon: <Image src={IconVideo} alt="icon" />,
+                  meta: "Video",
+                  value: data?.total_videos ?? 0,
+                }}
+              />
+              <Feature
+                data={{
+                  icon: <Image src={IconCertificate} alt="icon" />,
+                  meta: "Certificate",
+                  value:
+                    data?.certificate === 1 ? "Tersedia" : "Tidak Tersedia",
+                }}
+              />
+            </div>
+          </div>
         </div>
       </section>
     </>
