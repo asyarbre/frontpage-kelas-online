@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -8,12 +8,12 @@
   .header-clipping {
     @apply relative;
   }
-  
+
   .header-clipping .container {
     @apply relative;
     z-index: 3;
   }
-  
+
   .header-clipping:before {
     @apply w-full bg-indigo-800 inset-0 absolute;
     content: "";
@@ -29,5 +29,31 @@
 
   .video-wrapper iframe {
     @apply absolute top-0 left-0 w-full h-full;
+  }
+
+  .meta-price {
+    @apply fixed bottom-0;
+    transition: all ease-in-out 0.45s;
+    box-shadow: 0px -8px 15px rgba(0, 0, 0, 0.05);
+  }
+
+  .meta-price-enter {
+    opacity: 0;
+    bottom: -100%;
+  }
+  .meta-price-enter-active {
+    opacity: 1;
+    bottom: 0;
+  }
+  .meta-price-exit {
+    opacity: 1;
+    bottom: 0;
+  }
+  .meta-price-exit-active {
+    opacity: 0;
+    bottom: -100%;
+  }
+  .meta-price-enter-done {
+    @apply bottom-0 opacity-100 absolute;
   }
 }
