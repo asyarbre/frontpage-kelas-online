@@ -14,6 +14,7 @@ import IconVideo from "../../../public/images/icon-video.svg";
 import IconCertificate from "../../../public/images/icon-certificate.svg";
 
 import Feature from "../../parts/Details/Feature";
+import CoursePhoto from "@/parts/Details/CoursePhoto";
 import formatThousand from "@/helpers/formatThousand";
 
 function DetailsCourse({ data }) {
@@ -152,6 +153,21 @@ function DetailsCourse({ data }) {
               <p className="text-gray-600 text-base md:text-lg leading-relaxed mb-3">
                 {data?.description ?? "No Description Found"}
               </p>
+            </section>
+
+            <section className="mt-12">
+            <h6 className="font-medium text-gray-900 text-2xl mb-4">
+                Course <span className="text-teal-500">Photos</span>
+              </h6>
+              <div className="flex flex-wrap justify-start items-center -mx-4 mt-6">
+                {data?.images?.length > 0 ? (
+                  data?.images?.map?.((photo, index) => (
+                    <CoursePhoto data={photo.image} key={index} />
+                  ))
+                ) : (
+                  <div className="w-full text-center py-12">No Item Found</div>
+                )}
+              </div>
             </section>
           </div>
         </div>
