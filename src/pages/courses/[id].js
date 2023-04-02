@@ -181,6 +181,23 @@ function DetailsCourse({ data }) {
                 <div className="w-full text-center py-12">No Chapter Found</div>
               )}
             </section>
+
+            <section className="mt-12">
+              <h6 className="font-medium text-gray-900 text-2xl mb-4">
+                Our <span className="text-teal-500">Instructor</span>
+                <div className="flex items-center mt-4">
+                  <Image className="w-20 rounded-full overflow-hidden" src={data?.mentor?.profile ?? ""} alt={data?.mentor.name} width={30} height={30}/>
+                  <div className="ml-4">
+                    <h2 className="text-lg text-gray-900">
+                      {data?.mentor?.name ?? "Mentor Name"}
+                    </h2>
+                     <h3 className="text-sm text-gray-600">
+                      {data?.mentor?.profession ?? "Mentor Profession"}
+                     </h3>
+                  </div>
+                </div>
+              </h6>
+            </section>
           </div>
         </div>
       </section>
