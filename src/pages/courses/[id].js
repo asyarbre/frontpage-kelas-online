@@ -16,6 +16,7 @@ import IconCertificate from "../../../public/images/icon-certificate.svg";
 import Feature from "../../parts/Details/Feature";
 import CoursePhoto from "@/parts/Details/CoursePhoto";
 import formatThousand from "@/helpers/formatThousand";
+import RenderPreview from "@/parts/Details/RenderPreview";
 
 function DetailsCourse({ data }) {
   console.log(data);
@@ -156,7 +157,7 @@ function DetailsCourse({ data }) {
             </section>
 
             <section className="mt-12">
-            <h6 className="font-medium text-gray-900 text-2xl mb-4">
+              <h6 className="font-medium text-gray-900 text-2xl mb-4">
                 Course <span className="text-teal-500">Photos</span>
               </h6>
               <div className="flex flex-wrap justify-start items-center -mx-4 mt-6">
@@ -168,6 +169,17 @@ function DetailsCourse({ data }) {
                   <div className="w-full text-center py-12">No Item Found</div>
                 )}
               </div>
+            </section>
+
+            <section className="mt-12">
+              <h6 className="font-medium text-gray-900 text-2xl mb-4">
+                You Will <span className="text-teal-500">Learn</span>
+              </h6>
+              {data?.chapters?.length > 0 ? (
+                <RenderPreview previews={data.chapters}></RenderPreview>
+              ) : (
+                <div className="w-full text-center py-12">No Chapter Found</div>
+              )}
             </section>
           </div>
         </div>
