@@ -17,6 +17,7 @@ import Feature from "../../parts/Details/Feature";
 import CoursePhoto from "@/parts/Details/CoursePhoto";
 import formatThousand from "@/helpers/formatThousand";
 import RenderPreview from "@/parts/Details/RenderPreview";
+import HappyStundent from "@/parts/Details/HappyStundent";
 
 function DetailsCourse({ data }) {
   console.log(data);
@@ -185,6 +186,8 @@ function DetailsCourse({ data }) {
             <section className="mt-12">
               <h6 className="font-medium text-gray-900 text-2xl mb-4">
                 Our <span className="text-teal-500">Instructor</span>
+              </h6>
+
                 <div className="flex items-center mt-4">
                   <Image className="w-20 rounded-full overflow-hidden" src={data?.mentor?.profile ?? ""} alt={data?.mentor.name} width={30} height={30}/>
                   <div className="ml-4">
@@ -196,7 +199,17 @@ function DetailsCourse({ data }) {
                      </h3>
                   </div>
                 </div>
+            </section>
+
+            <section className="mt-12">
+              <h6 className="font-medium text-gray-900 text-2xl mb-4">
+                Happy <span className="text-teal-500">Students</span>
               </h6>
+              {
+                data.reviews?.map?.((testimonial, index) => {
+                  return <HappyStundent data={testimonial} key={index} />
+                })
+              }
             </section>
           </div>
         </div>
