@@ -1,9 +1,11 @@
 import React from "react";
 import Image from "next/image";
+import Star from "@/components/Star";
 
 export default function HappyStundent({ data }) {
   return (
     <div className="mt-4 border rounded-lg p-4">
+      <Star value={data?.rating ?? 0} width={26} height={26} />
       <p className="text-gray-600 mt-1">{data?.note ?? "Mantap"}</p>
       <div className="flex items-center mt-4">
         <div className="rounded-full overflow-hidden">

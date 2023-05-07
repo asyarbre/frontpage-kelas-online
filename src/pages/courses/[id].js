@@ -172,7 +172,7 @@ function DetailsCourse({ data }) {
               </div>
             </section>
 
-            <section className="mt-12">
+            <section className="mt-12 w-2/3">
               <h6 className="font-medium text-gray-900 text-2xl mb-4">
                 You Will <span className="text-teal-500">Learn</span>
               </h6>
@@ -201,7 +201,7 @@ function DetailsCourse({ data }) {
                 </div>
             </section>
 
-            <section className="mt-12">
+            <section className="mt-12 w-6/12">
               <h6 className="font-medium text-gray-900 text-2xl mb-4">
                 Happy <span className="text-teal-500">Students</span>
               </h6>
