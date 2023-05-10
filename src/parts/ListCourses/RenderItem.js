@@ -15,6 +15,8 @@ export default function RenderItem({ item }) {
           <figure className="item-image">
             <Image
               src={item?.thumbnail ?? ""}
+              width={278}
+              height={185}
               alt={item?.name ?? "Some Information"}
             />
           </figure>
